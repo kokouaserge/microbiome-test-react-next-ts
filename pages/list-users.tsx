@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Content from "layout/Content/Content";
-import Head from "layout/Head/Head";
+import Content from "../src/layout/Content/Content";
+import Head from "../src/layout/Head/Head";
 import { Modal, ModalBody } from "reactstrap";
 import type { GetStaticProps } from "next";
 import {
@@ -9,12 +9,12 @@ import {
   BlockHead,
   BlockHeadContent,
   BlockTitle,
-} from "components/Block/Block";
-import Icon from "components/Icon/Icon";
-import Button from "components/Button/Button";
-import TableListUsers from "containers/TableListUsers/TableListUsers";
-import AddUser from "containers/AddUser/AddUser";
-import { useUsers, fetchUsers } from "hooks/useUsers";
+} from "../src/components/Block/Block";
+import Icon from "../src/components/Icon/Icon";
+import Button from "../src/components/Button/Button";
+import TableListUsers from "../src/containers/TableListUsers/TableListUsers";
+import AddUser from "../src/containers/AddUser/AddUser";
+import { useUsers, fetchUsers } from "../src/hooks/useUsers";
 import { QueryClient, dehydrate } from "react-query";
 
 const ListUsers = () => {

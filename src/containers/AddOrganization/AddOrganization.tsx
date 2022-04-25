@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FormGroup, Form } from "reactstrap";
-import { Col } from "components/Grid/Grid";
+import { Col } from "../../components/Grid/Grid";
 import { useForm } from "react-hook-form";
-import Button from "components/Button/Button";
-import { useAddOrganization } from "hooks/useOrganizations";
+import Button from "../../components/Button/Button";
+import { useAddOrganization } from "../../hooks/useOrganizations";
 
 export default function AddOrganization({ ToggleModal }: any) {
   const [organizationForm, setOrganizationForm] = useState({});

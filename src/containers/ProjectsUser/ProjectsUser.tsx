@@ -15,8 +15,8 @@ import {
   DataTableHead,
   DataTableRow,
   DataTableItem,
-} from "components/Table/DataTable";
-import Icon from "components/Icon/Icon";
+} from "../../components/Table/DataTable";
+import Icon from "../../components/Icon/Icon";
 
 const ProjectsUser = ({ user }: any) => {
   const [currentItems, setCurrentItems] = useState(user.projects);

@@ -1,11 +1,11 @@
 import { FormGroup, Form } from "reactstrap";
-import { Col } from "components/Grid/Grid";
-import RSelect from "components/RSelect/RSelect";
-import Button from "components/Button/Button";
+import { Col } from "../../components/Grid/Grid";
+import RSelect from "../../components/RSelect/RSelect";
+import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useOrganizations } from "hooks/useOrganizations";
-import { useAddUser } from "hooks/useUsers";
+import { useOrganizations } from "../../hooks/useOrganizations";
+import { useAddUser } from "../../hooks/useUsers";
 
 const AddUser = ({ ToggleModal }: any) => {
   const [organization, setOrganization] = useState(1);

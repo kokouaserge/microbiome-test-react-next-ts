@@ -1,6 +1,6 @@
 import React, { useEffect, FC } from "react";
 import classNames from "classnames";
-import NavLink from "shared/NavLink/NavLink";
+import NavLink from "../../shared/NavLink/NavLink";
 
 interface MenuItemProps {
   mobileView: boolean;

@@ -9,15 +9,15 @@ import {
   BlockHead,
   BlockHeadContent,
   BlockTitle,
-} from "components/Block/Block";
-import Icon from "components/Icon/Icon";
-import { Row } from "components/Grid/Grid";
-import Button from "components/Button/Button";
-import PaginationComponent from "components/Pagination/Pagination";
+} from "../src/components/Block/Block";
+import Icon from "../src/components/Icon/Icon";
+import { Row } from "../src/components/Grid/Grid";
+import Button from "../src/components/Button/Button";
+import PaginationComponent from "../src/components/Pagination/Pagination";
 import { Modal, ModalBody } from "reactstrap";
-import CardProject from "containers/CardProject/CardProject";
-import AddProject from "containers/AddProject/AddProject";
-import { useUsers, fetchUsers } from "hooks/useUsers";
+import CardProject from "../src/containers/CardProject/CardProject";
+import AddProject from "../src/containers/AddProject/AddProject";
+import { useUsers, fetchUsers } from "../src/hooks/useUsers";
 import { QueryClient, dehydrate } from "react-query";
 
 const ListProjects = () => {

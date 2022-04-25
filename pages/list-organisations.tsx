@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Content from "layout/Content/Content";
-import Head from "layout/Head/Head";
+import Content from "../src/layout/Content/Content";
+import Head from "../src/layout/Head/Head";
 import { Modal, ModalBody } from "reactstrap";
 import type { GetStaticProps } from "next";
 import {
@@ -10,15 +10,18 @@ import {
   BlockHead,
   BlockHeadContent,
   BlockTitle,
-} from "components/Block/Block";
-import Icon from "components/Icon/Icon";
-import { Row } from "components/Grid/Grid";
-import Button from "components/Button/Button";
-import PaginationComponent from "components/Pagination/Pagination";
-import CardOrganization from "containers/CardOrganization/CardOrganization";
-import { useOrganizations, fetchOrganizations } from "hooks/useOrganizations";
+} from "../src/components/Block/Block";
+import Icon from "../src/components/Icon/Icon";
+import { Row } from "../src/components/Grid/Grid";
+import Button from "../src/components/Button/Button";
+import PaginationComponent from "../src/components/Pagination/Pagination";
+import CardOrganization from "../src/containers/CardOrganization/CardOrganization";
+import {
+  useOrganizations,
+  fetchOrganizations,
+} from "../src/hooks/useOrganizations";
 import { QueryClient, dehydrate } from "react-query";
-import AddOrganization from "containers/AddOrganization/AddOrganization";
+import AddOrganization from "../src/containers/AddOrganization/AddOrganization";
 
 const ListOrganisations = () => {
   const [sm, updateSm] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import UserAvatar from "components/User/UserAvatar";
-import { findUpper, randomTheme } from "utils/Utils";
+import UserAvatar from "../../components/User/UserAvatar";
+import { findUpper, randomTheme } from "../../utils/Utils";
 import { CardTitle } from "reactstrap";
 import Link from "next/link";
 

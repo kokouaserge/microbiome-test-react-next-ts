@@ -1,10 +1,10 @@
 import { FormGroup, Form } from "reactstrap";
-import { Col } from "components/Grid/Grid";
-import RSelect from "components/RSelect/RSelect";
-import Button from "components/Button/Button";
+import { Col } from "../../components/Grid/Grid";
+import RSelect from "../../components/RSelect/RSelect";
+import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import React, { useState, useEffect } from "react";
-import { useAddProject } from "hooks/useProjects";
+import { useAddProject } from "../../hooks/useProjects";
 
 export default function AddProject({ ToggleModal, users }: any) {
   const [user, setUser] = useState(1);

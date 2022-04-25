@@ -5,11 +5,11 @@ import {
   DataTableHead,
   DataTableRow,
   DataTableItem,
-} from "components/Table/DataTable";
-import Icon from "components/Icon/Icon";
-import Button from "components/Button/Button";
+} from "../../components/Table/DataTable";
+import Icon from "../../components/Icon/Icon";
+import Button from "../../components/Button/Button";
 import TooltipComponent from "components/ToolTip/ToolTip";
-import { findUpper, randomTheme } from "utils/Utils";
+import { findUpper, randomTheme } from "../../utils/Utils";
 import {
   DropdownMenu,
   DropdownToggle,
@@ -19,9 +19,9 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import PaginationComponent from "components/Pagination/Pagination";
-import UserAvatar from "components/User/UserAvatar";
-import ProjectsUser from "containers/ProjectsUser/ProjectsUser";
+import PaginationComponent from "../../components/Pagination/Pagination";
+import UserAvatar from "../../components/User/UserAvatar";
+import ProjectsUser from "../../containers/ProjectsUser/ProjectsUser";
 
 const TableListUsers = ({ users }: any) => {
   const [data, setData] = useState(users);

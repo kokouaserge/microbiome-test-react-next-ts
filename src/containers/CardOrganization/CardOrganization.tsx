@@ -1,15 +1,15 @@
 import React from "react";
-import { Col } from "components/Grid/Grid";
-import UserAvatar from "components/User/UserAvatar";
-import { PreviewAltCard } from "components/Preview/Preview";
+import { Col } from "../../components/Grid/Grid";
+import UserAvatar from "../../components/User/UserAvatar";
+import { PreviewAltCard } from "../../components/Preview/Preview";
 import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
   DropdownItem,
 } from "reactstrap";
-import Icon from "components/Icon/Icon";
-import { findUpper, randomTheme } from "utils/Utils";
+import Icon from "../../components/Icon/Icon";
+import { findUpper, randomTheme } from "../../utils/Utils";
 
 export default function CardOrganization({ organization }: any) {
   return (

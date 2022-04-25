@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import Icon from "components/Icon/Icon";
+import Icon from "../../components/Icon/Icon";
 import Image from "next/image";
 
 const UserAvatar = ({

@@ -1,6 +1,6 @@
-import { useUsers } from "hooks/useUsers";
-import { useProjects } from "hooks/useProjects";
-import { useOrganizationsWithoutCallBack } from "hooks/useOrganizations";
+import { useUsers } from "../hooks/useUsers";
+import { useProjects } from "../hooks/useProjects";
+import { useOrganizationsWithoutCallBack } from "../hooks/useOrganizations";
 
 export const useSomePageData = () => {
   const {

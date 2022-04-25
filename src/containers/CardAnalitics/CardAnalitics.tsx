@@ -1,6 +1,6 @@
 import React from "react";
-import { PreviewAltCard } from "components/Preview/Preview";
-import TooltipComponent from "components/ToolTip/ToolTip";
+import { PreviewAltCard } from "../../components/Preview/Preview";
+import TooltipComponent from "../../components/ToolTip/ToolTip";
 
 export default function CardAnalitics({ data, type }: any) {
   const renderSwitch = (type: string) => {

@@ -1,14 +1,13 @@
 import React from "react";
-import UserAvatar from "components/User/UserAvatar";
-import Icon from "components/Icon/Icon";
+import UserAvatar from "../../components/User/UserAvatar";
+import Icon from "../../components/Icon/Icon";
 import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
   Progress,
 } from "reactstrap";
-import { PreviewCard } from "components/Preview/Preview";
-import { setDeadlineDays } from "utils/Utils";
+import { PreviewCard } from "../../components/Preview/Preview";
 import { v4 as uuidv4 } from "uuid";
 
 export const ProjectCard = ({ ...props }) => {
@@ -80,69 +79,5 @@ export const ProjectHead = ({ color, initial, title, subtitle }: any) => {
         </DropdownMenu>
       </UncontrolledDropdown>
     </div>
-  );
-};
-
-export const ProjectBody = ({ desc, task, percentage, team, date }: any) => {
-  var days = setDeadlineDays(date);
-  return (
-    <>
-      <div className="project-details">{desc}</div>
-      <div className="project-progress">
-        <div className="project-progress-details">
-          <div className="project-progress-task">
-            <Icon name="check-round-cut"></Icon>
-            <span>{task} Tasks</span>
-          </div>
-          <div className="project-progress-percent">{percentage}%</div>
-        </div>
-        <Progress value={percentage}></Progress>
-      </div>
-      <div className="project-meta">
-        <ul className="project-users g-1">
-          {team.slice(0, 2).map((item: any) => {
-            return (
-              <li key={uuidv4()}>
-                <UserAvatar
-                  size="sm"
-                  text={item.text}
-                  theme={item.theme}
-                  image={item.image}
-                />
-              </li>
-            );
-          })}
-          {team.length > 2 && (
-            <li>
-              <UserAvatar
-                theme="light"
-                size="sm"
-                text={`+${team.length - 2}`}
-              />
-            </li>
-          )}
-        </ul>
-        <span
-          className={`badge badge-dim badge-${
-            days > 10
-              ? "light"
-              : days <= 10 && days >= 2
-              ? "warning"
-              : days === 1
-              ? "danger"
-              : days === 0 && "success"
-          }`}
-        >
-          <Icon name="clock"></Icon>
-          <span>
-            {days === 0
-              ? "Done"
-              : days === 1
-              ? "Due Tomorrow"
-              : days + " Days Left"}
-          </span>
-        </span>
-      </div>
-    </>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "components/Icon/Icon";
+import Icon from "../../components/Icon/Icon";
 import { Pagination, PaginationLink, PaginationItem } from "reactstrap";
 
 const PaginationComponent = ({

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import UserAvatar from "components/User/UserAvatar";
-import Icon from "components/Icon/Icon";
+import UserAvatar from "../../components/User/UserAvatar";
+import Icon from "../../components/Icon/Icon";
 import {
   DropdownItem,
   DropdownMenu,
@@ -12,8 +12,8 @@ import {
   DataTableHead,
   DataTableItem,
   DataTableRow,
-} from "components/Table/DataTable";
-import { findUpper, randomTheme } from "utils/Utils";
+} from "../../components/Table/DataTable";
+import { findUpper, randomTheme } from "../../utils/Utils";
 import Link from "next/link";
 
 const LastProjects = ({ data }: any) => {

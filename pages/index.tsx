@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import Head from "layout/Head/Head";
-import Content from "layout/Content/Content";
+import Head from "../src/layout/Head/Head";
+import Content from "../src/layout/Content/Content";
 import React, { useState } from "react";
 import {
   DropdownToggle,
@@ -18,18 +18,18 @@ import {
   BlockHead,
   BlockHeadContent,
   BlockTitle,
-} from "components/Block/Block";
-import Icon from "components/Icon/Icon";
-import Button from "components/Button/Button";
-import { Row, Col } from "components/Grid/Grid";
-import LastProjects from "containers/LastProjects/LastProjects";
-import { useSomePageData } from "hooks/useSomeAllQuery";
-import CardAnalitics from "containers/CardAnalitics/CardAnalitics";
-import LastUsers from "containers/LastUsers/LastUsers";
+} from "../src/components/Block/Block";
+import Icon from "../src/components/Icon/Icon";
+import Button from "../src/components/Button/Button";
+import { Row, Col } from "../src/components/Grid/Grid";
+import LastProjects from "../src/containers/LastProjects/LastProjects";
+import { useSomePageData } from "../src/hooks/useSomeAllQuery";
+import CardAnalitics from "../src/containers/CardAnalitics/CardAnalitics";
+import LastUsers from "../src/containers/LastUsers/LastUsers";
 
-import AddProject from "containers/AddProject/AddProject";
-import AddUser from "containers/AddUser/AddUser";
-import AddOrganization from "containers/AddOrganization/AddOrganization";
+import AddProject from "../src/containers/AddProject/AddProject";
+import AddUser from "../src/containers/AddUser/AddUser";
+import AddOrganization from "../src/containers/AddOrganization/AddOrganization";
 
 const Home: NextPage = () => {
   const [sm, updateSm] = useState(false);

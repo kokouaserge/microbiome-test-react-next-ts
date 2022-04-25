@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "components/Icon/Icon";
+import Icon from "../../components/Icon/Icon";
 import classNames from "classnames";
 import Link from "next/link";
 

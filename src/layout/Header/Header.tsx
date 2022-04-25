@@ -1,12 +1,10 @@
 import React, { FC, useState, useEffect } from "react";
 import classNames from "classnames";
-import Toggle from "layout/Sidebar/Toggle";
-import Logo from "layout/Logo/Logo";
-import Menu from "layout/Menu/Menu";
-import User from "layout/Header/dropdown/User/User";
+import Toggle from "../Sidebar/Toggle";
+import Logo from "../Logo/Logo";
+import Menu from "../Menu/Menu";
+import User from "./dropdown/User/User";
 import MobileMenu from "layout/Menu/MobileMenu";
-import Icon from "components/Icon/Icon";
-import Button from "components/Button/Button";
 
 interface HeaderProps {
   fixed: boolean;
