@@ -1,11 +1,14 @@
 import type { AppProps } from "next/app";
 import "../src/assets/scss/custom_framework.scss";
+import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState, useLayoutEffect } from "react";
 import Head from "layout/Head/Head";
 import Header from "layout/Header/Header";
 import Footer from "layout/Footer/Footer";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { ToastContainer } from "react-toastify";
+
 React.useLayoutEffect = React.useEffect;
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -14,8 +17,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [visibility, setVisibility] = useState(false);
   const [mobileView, setMobileView] = useState(false);
   const [themeState, setThemeState] = useState({
-    main: "ui-clean", //default
-    header: "white", //white
+    main: "ui-shady", //default
+    header: "theme", //white
     skin: "light",
   });
 
@@ -130,6 +133,17 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
               <Footer />
             </div>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
           </div>
         </Hydrate>
         <ReactQueryDevtools />

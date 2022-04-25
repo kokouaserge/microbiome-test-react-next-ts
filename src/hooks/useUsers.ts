@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "react-query";
+import { toast } from "react-toastify";
 
 export const fetchUsers = () =>
   axios
@@ -9,7 +10,17 @@ export const fetchUsers = () =>
 export const addUser = (user: any) =>
   axios
     .post(`http://localhost:8080/api/v1/users`, user)
-    .then(({ data }: any) => data);
+    .then(({ data }: any) => {
+      toast.success("Enregistrer avec succès !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      return data;
+    })
+    .catch(function (error) {
+      toast.error(error.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    });
 
 export const useUsers = () => {
   return useQuery(["getUsers"], () => fetchUsers());

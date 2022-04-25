@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Content from "layout/Content/Content";
 import Head from "layout/Head/Head";
 import { Modal, ModalBody } from "reactstrap";
@@ -6,7 +6,6 @@ import type { GetStaticProps } from "next";
 import {
   Block,
   BlockBetween,
-  BlockDes,
   BlockHead,
   BlockHeadContent,
   BlockTitle,

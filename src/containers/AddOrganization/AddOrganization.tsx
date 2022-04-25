@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FormGroup, Form } from "reactstrap";
-import { Row, Col } from "components/Grid/Grid";
+import { Col } from "components/Grid/Grid";
 import { useForm } from "react-hook-form";
 import Button from "components/Button/Button";
 import { useAddOrganization } from "hooks/useOrganizations";
@@ -13,7 +13,6 @@ export default function AddOrganization({ ToggleModal }: any) {
   // submit function to add a new item
   const onFormSubmit = (submitData: any) => {
     mutation.mutateAsync(submitData);
-
     ToggleModal(false);
   };
   return (

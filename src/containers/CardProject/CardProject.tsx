@@ -30,7 +30,9 @@ export default function CardProject({ project }: any) {
             />
             <div className="project-info">
               <h6 className="title">{project.organization}</h6>
-              <span className="sub-text">{project.organization}</span>
+              <span className="sub-text">
+                {project.owner.first_name + " " + project.owner.last_name}
+              </span>
             </div>
           </a>
           <UncontrolledDropdown>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Content from "layout/Content/Content";
 import Head from "layout/Head/Head";
-import { FormGroup, Modal, ModalBody, Form } from "reactstrap";
-
+import { Modal, ModalBody } from "reactstrap";
+import type { GetStaticProps } from "next";
 import {
   Block,
   BlockBetween,
@@ -12,38 +12,42 @@ import {
   BlockTitle,
 } from "components/Block/Block";
 import Icon from "components/Icon/Icon";
-import { Row, Col } from "components/Grid/Grid";
+import { Row } from "components/Grid/Grid";
 import Button from "components/Button/Button";
 import PaginationComponent from "components/Pagination/Pagination";
-import RSelect from "components/RSelect/RSelect";
-import {
-  filterRole,
-  filterStatus,
-  userData,
-} from "components/UserContext/UserData";
-import { useForm } from "react-hook-form";
 import CardOrganization from "containers/CardOrganization/CardOrganization";
-import { useUsers, fetchUsers } from "hooks/useUsers";
-import { useOrganizations } from "hooks/useOrganizations";
+import { useOrganizations, fetchOrganizations } from "hooks/useOrganizations";
+import { QueryClient, dehydrate } from "react-query";
 import AddOrganization from "containers/AddOrganization/AddOrganization";
 
 const ListOrganisations = () => {
-  // const [data, setData] = useState(userData);
-
   const [sm, updateSm] = useState(false);
   const [modal, setModal] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    balance: "",
-    phone: "",
-    status: "Active",
-  });
   const [currentPage, setCurrentPage] = useState(1);
+  const [onSearchText, setSearchText] = useState("");
   const [itemPerPage, setItemPerPage] = useState(10);
   const [organizations, setOrganizations] = useState([]);
   const { isSuccess, data, isLoading, isError, error } =
     useOrganizations(setOrganizations);
+
+  // Changing state value when searching name
+  useEffect(() => {
+    if (onSearchText !== "") {
+      const filteredObject = organizations.filter((item: any) => {
+        return item.name.toLowerCase().includes(onSearchText.toLowerCase());
+      });
+      setOrganizations([...filteredObject]);
+    } else {
+      const oldOrganizations: any = data;
+      setOrganizations(oldOrganizations);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onSearchText]);
+
+  // onChange function for searching name
+  const onFilterChange = (e: any) => {
+    setSearchText(e.target.value);
+  };
 
   // Get current list, pagination
   const indexOfLastItem = currentPage * itemPerPage;
@@ -90,6 +94,20 @@ const ListOrganisations = () => {
                   style={{ display: sm ? "block" : "none" }}
                 >
                   <ul className="nk-block-tools g-3">
+                    <li>
+                      <div className="form-control-wrap">
+                        <div className="form-icon form-icon-right">
+                          <em className="icon ni ni-search"></em>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Rechercher par nom "
+                          value={onSearchText}
+                          onChange={(e) => onFilterChange(e)}
+                        />
+                      </div>
+                    </li>
                     <li className="nk-block-tools-opt">
                       <Button
                         color="primary"
@@ -147,3 +165,15 @@ const ListOrganisations = () => {
   );
 };
 export default ListOrganisations;
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(["getOrganizations"], () =>
+    fetchOrganizations()
+  );
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};

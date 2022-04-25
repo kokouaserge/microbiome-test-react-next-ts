@@ -14,10 +14,7 @@ export const LinkItem = ({ ...props }) => {
           </a>
         </Link>
       ) : (
-        <a
-          href={process.env.PUBLIC_URL + props.link}
-          onClick={(ev) => ev.preventDefault()}
-        >
+        <a href={props.link} onClick={(ev) => ev.preventDefault()}>
           {props.icon ? <Icon name={props.icon} /> : null}{" "}
           <span>{props.text || props.children}</span>
         </a>

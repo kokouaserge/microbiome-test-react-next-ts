@@ -7,7 +7,6 @@ import {
   DataTableItem,
 } from "components/Table/DataTable";
 import Icon from "components/Icon/Icon";
-import Link from "next/link";
 import Button from "components/Button/Button";
 import TooltipComponent from "components/ToolTip/ToolTip";
 import { findUpper, randomTheme } from "utils/Utils";
@@ -94,8 +93,6 @@ const TableListUsers = ({ users }: any) => {
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
   // Change Page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-  const suspendUser = (id: number) => {};
 
   const seeProjects = (user: any) => {
     setUserActive(user);
@@ -258,7 +255,7 @@ const TableListUsers = ({ users }: any) => {
             <DataTableRow size="mb">
               <span className="sub-text">Description Organisation</span>
             </DataTableRow>
-            <DataTableRow size="mb"></DataTableRow>
+            <DataTableRow size="mb">&nbsp;</DataTableRow>
           </DataTableHead>
           {/*Head*/}
           {currentItems.length > 0
@@ -267,20 +264,18 @@ const TableListUsers = ({ users }: any) => {
                 return (
                   <DataTableItem key={item.id}>
                     <DataTableRow>
-                      <Link href={`/user-details-regular/${item.id}`}>
-                        <a>
-                          <div className="user-card">
-                            <UserAvatar
-                              text={findUpper(name)}
-                              theme={randomTheme()}
-                            ></UserAvatar>
-                            <div className="user-info">
-                              <span className="tb-lead">{name} </span>
-                              <span>{item.email}</span>
-                            </div>
+                      <a href="#title">
+                        <div className="user-card">
+                          <UserAvatar
+                            text={findUpper(name)}
+                            theme={randomTheme()}
+                          ></UserAvatar>
+                          <div className="user-info">
+                            <span className="tb-lead">{name} </span>
+                            <span>{item.email}</span>
                           </div>
-                        </a>
-                      </Link>
+                        </div>
+                      </a>
                     </DataTableRow>
 
                     <DataTableRow size="mb">
@@ -296,10 +291,7 @@ const TableListUsers = ({ users }: any) => {
                     </DataTableRow>
                     <DataTableRow className="nk-tb-col-tools">
                       <ul className="nk-tb-actions gx-1">
-                        <li
-                          className="nk-tb-action-hidden"
-                          onClick={() => suspendUser(item.id)}
-                        >
+                        <li className="nk-tb-action-hidden">
                           <TooltipComponent
                             tag="a"
                             containerClassName="btn btn-trigger btn-icon"

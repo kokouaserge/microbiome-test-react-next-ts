@@ -97,7 +97,7 @@ const MenuItem: FC<MenuItemProps> = ({
 
 const MobileMenu: FC<MobileMenuProps> = ({ sidebarToggle, mobileView }) => {
   return (
-    <ul className="nk-menu nk-menu-main ui-s2">
+    <ul className="nk-menu nk-menu-main ui-s2 mt-4 ml-4">
       {menu.map((item) => (
         <MenuItem
           key={item.text}

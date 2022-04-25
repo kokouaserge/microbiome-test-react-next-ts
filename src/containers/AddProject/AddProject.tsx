@@ -6,12 +6,7 @@ import { useForm } from "react-hook-form";
 import React, { useState, useEffect } from "react";
 import { useAddProject } from "hooks/useProjects";
 
-export default function AddProject({
-  ToggleModal,
-  updateProjectList,
-  projects,
-  users,
-}: any) {
+export default function AddProject({ ToggleModal, users }: any) {
   const [user, setUser] = useState(1);
   const [userFormat, setUserFormat] = useState([]);
   const [userForm, setUserForm] = useState({});
@@ -38,15 +33,11 @@ export default function AddProject({
     mutation.mutateAsync(submittedData);
     ToggleModal(false);
   };
-  // OnChange function to get the input data
-  const onInputChange = (e: any) => {
-    // updateProjectList({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const { errors, register, handleSubmit } = useForm();
   return (
     <div className="p-2">
-      <h5 className="title">Add Project</h5>
+      <h5 className="title">Ajouter un Project</h5>
       <div className="mt-4">
         <Form className="row gy-4" onSubmit={handleSubmit(onFormSubmit)}>
           <Col md="6">

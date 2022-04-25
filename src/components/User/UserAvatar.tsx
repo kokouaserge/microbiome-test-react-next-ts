@@ -3,10 +3,6 @@ import classNames from "classnames";
 import Icon from "components/Icon/Icon";
 import Image from "next/image";
 
-// Aviable sizes {xs,sm,md,lg,xl}
-/* Aviable theme {blue-dim, blue, azure-dim, azure, indigo-dim, indigo, purple-dim, purple, pink-dim, pink, orange-dim, orange, teal-dim, teal, 
-    primary-dim, primary, secondary-dim, secondary, success-dim, success, info-dim, info, warning-dim, warning, danger-dim, danger, dark-dim, dark, gray-dim, gray, lighter, light} */
-
 const UserAvatar = ({
   className = "",
   size = "",

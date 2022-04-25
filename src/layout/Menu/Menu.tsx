@@ -32,18 +32,9 @@ const menu: MenuItem[] = [
 
 const MenuItem: FC<MenuItemProps> = ({ item, headActive }) => {
   const { text, link } = item;
-  let locationPath = "";
-
-  if (typeof window !== "undefined") {
-    locationPath = window.location.pathname;
-  }
 
   return (
-    <li
-      className={`nk-menu-item  ${
-        link === locationPath ? "active current-page" : ""
-      } ${headActive ? "active current-page" : ""}`}
-    >
+    <li className={`nk-menu-item  ${headActive ? "active current-page" : ""}`}>
       <Link href={link}>
         <a className="nk-menu-link">
           <span className="nk-menu-text">{text}</span>
@@ -54,7 +45,7 @@ const MenuItem: FC<MenuItemProps> = ({ item, headActive }) => {
 };
 
 const Menu = () => {
-  const [head, setHead] = useState("Dashboards");
+  const [head, setHead] = useState("Tableau de bord");
   let locationPath = "";
 
   if (typeof window !== "undefined") {
@@ -62,7 +53,7 @@ const Menu = () => {
   }
 
   useEffect(() => {
-    const ActiveHead = menu.find((item: any) => item.link == locationPath);
+    const ActiveHead = menu.find((item: any) => item.link === locationPath);
     if (ActiveHead) {
       setHead(ActiveHead.text);
     }

@@ -55,78 +55,12 @@ export const findUpper = (string: string) => {
   }
 };
 
-//Function that calculates the from current date
-export const setDeadline = (days: number) => {
-  let todayDate = new Date();
-  var newDate = new Date(todayDate);
-  newDate.setDate(newDate.getDate() + days);
-  return newDate;
-};
-
-// Function to structure date ex : Jun 4, 2011;
-export const getDateStructured = (date: Date) => {
-  let d = date.getDate();
-  let m = date.getMonth();
-  let y = date.getFullYear();
-  let final = monthNames[m] + " " + d + ", " + y;
-  return final;
-};
-
-// Function to structure date ex: YYYY-MM-DD
-export const setDateForPicker = (rdate: any) => {
-  let d = rdate.getDate();
-  d < 10 && (d = "0" + d);
-  let m = rdate.getMonth() + 1;
-  m < 10 && (m = "0" + m);
-  let y = rdate.getFullYear();
-  rdate = y + "-" + m + "-" + d;
-
-  return rdate;
-};
-
 // Set deadlines for projects
 export const setDeadlineDays = (deadline: Date) => {
   var currentDate = new Date();
   var difference = deadline.getTime() - currentDate.getTime();
   var days = Math.ceil(difference / (1000 * 3600 * 24));
   return days;
-};
-
-//Date formatter function
-export const dateFormatterAlt = (date: any, reverse: any) => {
-  let d = date.getDate();
-  let m = date.getMonth() + 1;
-  let y = date.getFullYear();
-  reverse
-    ? (date = m + " - " + d + " - " + y)
-    : (date = y + " - " + d + " - " + m);
-  return date;
-};
-
-//Date formatter function
-export const dateFormatter = (date: string, reverse: any, string: string) => {
-  var dateformat = date.split("-");
-  //var date = dateformat[1]+"-"+dateformat[2]+"-"+dateformat[0];
-  reverse
-    ? (date = dateformat[2] + "-" + dateformat[0] + "-" + dateformat[1])
-    : (date = dateformat[1] + "-" + dateformat[2] + "-" + dateformat[0]);
-
-  return date;
-};
-
-//todays Date
-export const todaysDate = new Date();
-
-//current Time
-export const currentTime = () => {
-  var hours = todaysDate.getHours();
-  let minutes: any = todaysDate.getMinutes();
-  var ampm = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  var strTime = hours + ":" + minutes + " " + ampm;
-  return strTime;
 };
 
 //Percentage calculation
@@ -140,70 +74,4 @@ export const truncate: any = (str: string, n: number) => {
   return str.length > n
     ? str.substr(0, n - 1) + " " + truncate(str.substr(n - 1, str.length), n)
     : str;
-};
-
-// returns upload url
-export const getUploadParams = () => {
-  return { url: "https://httpbin.org/post" };
-};
-
-export const bulkActionOptions = [
-  { value: "suspend", label: "Suspend User" },
-  { value: "delete", label: "Delete User" },
-];
-
-// Converts KB to MB
-export const bytesToMegaBytes = (bytes: number) => {
-  let result = bytes / (1024 * 1024);
-  return result.toFixed(2);
-};
-
-export const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-export const addDays = (date: string, days: number) => {
-  var result = new Date(date);
-  result.setDate(result.getDate() + days);
-  return result;
-};
-
-// Returns Currency based value for invest panel
-export const returnCurrency = (currency: string, data: any, upperCase: any) => {
-  if (currency === "usd") {
-    return { value: data.usd.toFixed(2), label: upperCase ? "USD" : "$" };
-  } else if (currency === "eur") {
-    return { value: data.euro.toFixed(2), label: upperCase ? "EUR" : "euro" };
-  } else if (currency === "btc") {
-    return { value: data.BTC.toFixed(6), label: "BTC" };
-  } else {
-    return { value: data.ETH.toFixed(2), label: "ETH" };
-  }
-};
-
-// Returns levels
-export const returnLevel = (currency: string, data: any, upperCase: any) => {
-  if (currency === "usd") {
-    return data.usd;
-  } else if (currency === "eur") {
-    return data.euro;
-  } else if (currency === "btc") {
-    let amount = data.BTC.map((item: any) => {
-      return item.toFixed(6);
-    });
-    return amount;
-  } else {
-    return data.ETH;
-  }
 };
