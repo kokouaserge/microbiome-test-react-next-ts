@@ -1,0 +1,42 @@
+///////////////////////////////////////////////////
+///        INCLUDED THIRD-PARTY VENDORS         ///
+///////////////////////////////////////////////////
+
+// Include NioIcon
+@import "nioicon/nioicon";
+
+// Include Prettify
+@import "prettify";
+
+// Include React Beautiful dnd
+@import "dnd";
+
+// Include Simplebar
+@import "simplebar";
+.simplebar-scroll-content {
+  @extend .simplebar-content-wrapper;
+}
+
+// Include Slick
+@import "slick/slick";
+
+// Include DataTable
+@import "dataTable/datatable";
+
+// Include React datatable
+@import "react-datatable/react-datatable";
+
+// Include SweetAlert2
+@import "sweetalert2/sweetalert2";
+
+// Include tagify
+@import "tagify";
+
+// Include React select
+@import "react-select/react-select";
+
+// Include Magnific Pop up
+@import "magnific-popup/main";
+
+// Include React Toastify
+@import "react-toastify/react-toastify";

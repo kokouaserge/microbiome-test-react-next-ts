@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Content from "../src/layout/Content/Content";
 import Head from "../src/layout/Head/Head";
 import { Modal, ModalBody } from "reactstrap";
-import type { GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import {
   Block,
   BlockBetween,

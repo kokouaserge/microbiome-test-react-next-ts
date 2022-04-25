@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "layout/Head/Head";
 import Content from "layout/Content/Content";
-import type { GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import {
   Block,
   BlockBetween,
