@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 export const fetchOrganizations = () =>
   axios
-    .get(`http://test-frontend.microbiomestudio.fr/api/v1/organizations`)
+    .get(`http://test-frontend.microbiomestudio.fr:4557/api/v1/organizations`)
     .then(({ data }: any) => data)
     .catch(function (error) {
       // console.log(error.message);
@@ -16,7 +16,7 @@ export const fetchOrganizations = () =>
 export const addOrganization = (organization: any) => {
   return axios
     .post(
-      `http://test-frontend.microbiomestudio.fr/api/v1/organizations/`,
+      `http://test-frontend.microbiomestudio.fr:4557/api/v1/organizations/`,
       organization
     )
     .then(({ data }: any) => {

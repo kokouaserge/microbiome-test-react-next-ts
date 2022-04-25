@@ -4,12 +4,12 @@ import { toast } from "react-toastify";
 
 export const fetchUsers = () =>
   axios
-    .get(`http://test-frontend.microbiomestudio.fr/api/v1/users/`)
+    .get(`http://test-frontend.microbiomestudio.fr:4557/api/v1/users/`)
     .then(({ data }: any) => data);
 
 export const addUser = (user: any) =>
   axios
-    .post(`http://test-frontend.microbiomestudio.fr/api/v1/users`, user)
+    .post(`http://test-frontend.microbiomestudio.fr:4557/api/v1/users`, user)
     .then(({ data }: any) => {
       toast.success("Enregistrer avec succès !", {
         position: toast.POSITION.TOP_RIGHT,
